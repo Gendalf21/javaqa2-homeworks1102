@@ -8,11 +8,11 @@ class SQRServiceTest {
     @Test
     void shouldborder() {
         SQRService service = new SQRService();
-        int lowLimit = 200;
-        int highLimit = 300;
-        int expected = 3;
+        int lowLimit = 100;
+        int highLimit = 400;
+        int expected = 11;
 
-        int actual = service.border(lowLimit, highLimit);
+        int actual = service.borderMethod(lowLimit, highLimit);
 
         assertEquals(expected, actual);
     }
