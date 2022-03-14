@@ -1,19 +1,26 @@
 package ru.netology.sqr;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class SQRServiceTest {
+public class SQRServiceTest {
     @Test
-    void shouldborder() {
+    public void shouldChangeHighBorder() {
+        SQRService service = new SQRService();
+        int lowLimit = 300;
+        int highLimit = 400;
+        int expected = 3;
+        int actual = service.borderMethod(lowLimit, highLimit);
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldChangeLowBorder() {
         SQRService service = new SQRService();
         int lowLimit = 100;
-        int highLimit = 400;
-        int expected = 11;
-
+        int highLimit = 200;
+        int expected = 5;
         int actual = service.borderMethod(lowLimit, highLimit);
-
-        assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 }
